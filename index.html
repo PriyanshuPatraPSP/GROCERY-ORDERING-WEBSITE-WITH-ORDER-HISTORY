@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh&Glass | Premium Groceries</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+    <!-- Dynamic Animated Background -->
+    <div class="glass-background">
+        <div class="blob shape1"></div>
+        <div class="blob shape2"></div>
+        <div class="blob shape3"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="app-container">
+        
+        <!-- Sidebar Navigation (Glass) -->
+        <nav class="sidebar glass-panel">
+            <div class="brand">
+                <i class="ph-fill ph-leaf"></i>
+                <span>Fresh&Glass</span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="active" data-filter="all"><i class="ph ph-squares-four"></i> All Items</li>
+                <li data-filter="Fruits"><i class="ph ph-apple-logo"></i> Fruits</li>
+                <li data-filter="Vegetables"><i class="ph ph-carrot"></i> Vegetables</li>
+                <li data-filter="Dairy"><i class="ph ph-drop"></i> Dairy</li>
+                <li data-filter="Bakery"><i class="ph ph-bread"></i> Bakery</li>
+            </ul>
+
+            <div class="nav-bottom">
+                <button id="view-orders-btn" class="glass-btn">
+                    <i class="ph ph-clock-counter-clockwise"></i> Order History
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            
+            <header class="top-header glass-panel">
+                <div class="search-bar">
+                    <i class="ph ph-magnifying-glass"></i>
+                    <input type="text" id="search-input" placeholder="Search fresh ingredients...">
+                </div>
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=User&background=random" alt="User Profile">
+                </div>
+            </header>
+
+            <div id="catalog-view">
+                <div class="welcome-banner glass-panel">
+                    <div class="banner-text">
+                        <h1>Fresh groceries, delivered <span>crystal clear.</span></h1>
+                        <p>Enjoy our premium selection of organic and locally sourced ingredients.</p>
+                    </div>
+                </div>
+
+                <div class="product-grid" id="product-grid">
+                    <!-- Products injected by JS -->
+                </div>
+            </div>
+
+            <div id="orders-view" style="display: none;">
+                <div class="section-title">
+                    <h2>Your Order History</h2>
+                </div>
+                <div class="orders-list" id="orders-list">
+                    <!-- Orders injected by JS -->
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Right Cart Panel (Glass) -->
+        <aside class="cart-panel glass-panel">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <span class="cart-badge" id="cart-count">0</span>
+            </div>
+            
+            <div class="cart-items" id="cart-items">
+                <!-- Cart empty state -->
+                <div class="empty-cart">
+                    <i class="ph ph-shopping-cart"></i>
+                    <p>Your cart is empty.</p>
+                </div>
+            </div>
+
+            <div class="cart-footer">
+                <div class="cart-totals">
+                    <div class="total-row">
+                        <span>Subtotal</span>
+                        <span id="subtotal-price">$0.00</span>
+                    </div>
+                    <div class="total-row">
+                        <span>Delivery</span>
+                        <span>$5.00</span>
+                    </div>
+                    <div class="total-row grand-total">
+                        <span>Total</span>
+                        <span id="grand-total-price">$0.00</span>
+                    </div>
+                </div>
+                <button class="checkout-btn" id="checkout-btn" disabled>Checkout & Pay</button>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast glass-panel">
+        <i class="ph-fill ph-check-circle"></i>
+        <span id="toast-message">Item added to cart!</span>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
